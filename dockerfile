@@ -13,8 +13,7 @@ COPY . .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port (not needed for Telegram bot, but good practice)
-EXPOSE 8080
+
 
 # Run your bot
 CMD ["python", "bot.py"]
