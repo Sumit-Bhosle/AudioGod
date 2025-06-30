@@ -1,7 +1,7 @@
 services:
   - type: web
     name: audiogod-bot
-    env: python
+    env: docker
     plan: free  # optional, makes sure you stay on free plan
     buildCommand: |
       ./build.sh
