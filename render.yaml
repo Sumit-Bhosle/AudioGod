@@ -1,11 +1,15 @@
-
 services:
   - type: web
     name: audiogod-bot
     env: python
-    plan: free
+    plan: free  # optional, makes sure you stay on free plan
     buildCommand: |
-      apt-get update && apt-get install -y ffmpeg
+      ./build.sh
       pip install -r requirements.txt
     startCommand: python bot.py
-    autoDeploy: false
+    autoDeploy: false  # set to true if you want auto-deploy on push
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: FFMPEG_BIN
+        value: ffmpeg
